@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sabin | Portfolio</title>
+  <meta name="description" content="Portfolio of Sabin Shrestha – Curious. Persistent. Code-driven." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#hero">Sabin</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+      <label class="theme-switch" title="Toggle theme">
+        <input id="theme-toggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 id="site-name">Sabin Shrestha</h1>
+          <p id="site-tag" class="tag">Curious. Persistent. Code-driven.</p>
+          <p id="site-lead" class="lead">Tech enthusiast focused on building reliable, user-centric software. I love debugging tough problems, crafting clean UIs, and learning every day.</p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img id="avatar-img" class="avatar" src="./assets/img/Sabin Shrestha.jpg" alt="Sabin avatar placeholder" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>About Me</h2>
+          <p id="about-text">A motivated BSc.CSIT student with strengths in troubleshooting hardware/software issues, building with C# and WPF, UI/UX design, and a growth mindset. I enjoy transforming ideas into fast, accessible apps.</p>
+          <ul class="ticks">
+            <li>Hardware/Software troubleshooting</li>
+            <li>C#, .NET, WPF development</li>
+            <li>UI/UX design principles</li>
+            <li>Continuous learning & collaboration</li>
+          </ul>
+        </div>
+        <div class="about-media">
+          <div class="image-frame">
+            <img src="./assets/img/Sabin Shrestha.jpg" alt="Friendly image placeholder" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <div id="skills-chips" class="chip-grid">
+          <span class="chip">C#</span>
+          <span class="chip">.NET</span>
+          <span class="chip">WPF</span>
+          <span class="chip">ASP.NET MVC</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Git & GitHub</span>
+          <span class="chip">Visual Studio</span>
+          <span class="chip">Full‑stack basics</span>
+          <span class="chip">UI/UX Principles</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p class="muted">A selection of things I’ve built and explored.</p>
+        </div>
+        <div id="projects-list" class="cards">
+          <article class="card">
+            <h3>Secure File Sharing P2P</h3>
+            <p>Decentralized P2P file sharing app in WPF and .NET with manual cryptography (AES‑256, RSA).</p>
+            <p class="stack">WPF • .NET • C# • AES/RSA</p>
+            <div class="card-actions">
+              <a class="btn small" href="https://github.com/001sabin/SecureFileShareP2P" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Tourism Management System</h3>
+            <p>Full‑stack web app using ASP.NET Core MVC with booking, CRUD, and feedback system.</p>
+            <p class="stack">ASP.NET • SQL • MVC • C#</p>
+            <div class="card-actions">
+              <a class="btn small" href="https://github.com/001sabin/TourismManagementSystem" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>UI Design Practice</h3>
+            <p>Explorations of layouts, components, and micro‑interactions for desktop apps.</p>
+            <p class="stack">Figma • UI/UX</p>
+            <div class="card-actions">
+              <a class="btn small" href="#" aria-disabled="true">Case Study (soon)</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Algorithms & Mnemonics</h3>
+            <p>Notes and memory aids for exam prep and quick troubleshooting.</p>
+            <p class="stack">Notes • Markdown</p>
+            <div class="card-actions">
+              <a class="btn small" href="#blog">Blog</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section alt">
+      <div class="container two-col">
+        <div>
+          <h2>Resume</h2>
+          <p>Download a concise PDF with my experience, certifications, and quantified results.</p>
+          <div class="cta">
+            <a id="resume-link" class="btn primary" href="./assets/resume/Sabin_Shrestha_Resume.pdf" download>Download PDF</a>
+            <a class="btn ghost" href="#contact">Hire Me</a>
+          </div>
+          <ul class="ticks space">
+            <li>Led secure P2P project with encryption</li>
+            <li>Delivered full‑stack CRUD booking system</li>
+            <li>Trained in Graphic Design & UI/UX</li>
+          </ul>
+        </div>
+        <div>
+          <div class="resume-card">
+            <h4>Highlights</h4>
+            <ul>
+              <li>Problem‑solver with strong debugging skills</li>
+              <li>Comfortable across UI, logic, and data layers</li>
+              <li>Growth mindset and collaborative spirit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Contact</h2>
+          <p class="muted">Let’s build something useful together.</p>
+          <form id="contact-form" class="form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <span class="error" data-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              <span class="error" data-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Hi Sabin, ..." required></textarea>
+              <span class="error" data-for="message"></span>
+            </div>
+            <button class="btn primary" type="submit">Send</button>
+          </form>
+        </div>
+        <div>
+          <div class="contact-card">
+            <h4>Find me</h4>
+            <ul id="socials" class="socials">
+              <li><a id="social-email" href="mailto:shresthasabin130@gmail.com">Email</a></li>
+              <li><a id="social-linkedin" href="https://www.linkedin.com/in/sabinshrestha001/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a id="social-github" href="https://github.com/001sabin" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+            <p class="muted">Bhaktapur, Nepal • +977 9741864096</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Placeholder -->
+    <section id="blog" class="section alt">
+      <div class="container">
+        <h2>Blog</h2>
+        <p>Posts coming soon on mnemonics, troubleshooting, and design critiques.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Sabin. Made with ❤️ by Sabin.</p>
+      <ul class="footer-links">
+        <li><a href="#hero">Top</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

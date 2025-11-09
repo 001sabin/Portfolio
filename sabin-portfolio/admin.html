@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin • Sabin Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <style>
+    main { padding-top: 110px; }
+    .admin-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+    .panel h3 { margin: 0 0 10px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    textarea { min-height: 140px; }
+    .note { color: var(--muted); font-size: .95rem; }
+    .uploader { display: grid; gap: 8px; }
+    .uploader img { width: 140px; border-radius: 12px; border: 1px solid var(--border); }
+    .auth-overlay { position: fixed; inset: 0; background: color-mix(in oklab, var(--bg) 75%, rgba(0,0,0,.55)); backdrop-filter: blur(8px); display: grid; place-items: center; z-index: 9999; }
+    .auth-card { width: min(420px, 92%); background: var(--card); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); padding: 18px; display: grid; gap: 12px; }
+    .auth-card h2 { margin: 0; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="auth-overlay" class="auth-overlay">
+    <div class="auth-card">
+      <h2>Admin Access</h2>
+      <p class="muted">Enter password to continue.</p>
+      <div class="field"><label>Password</label><input id="auth-password" type="password" placeholder="Password"></div>
+      <div id="auth-error" class="error"></div>
+      <button id="auth-submit" class="btn primary">Unlock</button>
+    </div>
+  </div>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="./index.html">Sabin</a>
+      <div></div>
+      <a class="btn small" href="./index.html">Preview</a>
+      <label class="theme-switch"><input id="admin-theme" type="checkbox"><span class="slider"></span></label>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Portfolio Admin</h1>
+    <p class="muted">Update your profile, skills, projects, socials, resume, and email integration. Data saves to your browser (localStorage).</p>
+
+    <div class="admin-grid">
+      <section class="panel">
+        <h3>Profile</h3>
+        <div class="row">
+          <div class="field"><label>Name</label><input id="in-name" placeholder="Sabin Shrestha"></div>
+          <div class="field"><label>Tagline</label><input id="in-tag" placeholder="Curious. Persistent. Code-driven."></div>
+        </div>
+        <div class="field"><label>Lead</label><input id="in-lead" placeholder="Short intro"/></div>
+        <div class="field"><label>About</label><textarea id="in-about" placeholder="About me"></textarea></div>
+        <div class="uploader">
+          <label>Avatar / Photo</label>
+          <input id="in-avatar" type="file" accept="image/*" />
+          <img id="avatar-preview" alt="Preview" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3>Skills</h3>
+        <div class="field"><label>Skills (comma-separated)</label><input id="in-skills" placeholder="C#, .NET, WPF, SQL, UI/UX" /></div>
+        <h3>Socials</h3>
+        <div class="field"><label>Email (mailto)</label><input id="in-social-email" placeholder="shresthasabe130@gmail.com" /></div>
+        <div class="field"><label>LinkedIn URL</label><input id="in-social-linkedin" placeholder="https://www.linkedin.com/in/..." /></div>
+        <div class="field"><label>GitHub URL</label><input id="in-social-github" placeholder="https://github.com/001sabin" /></div>
+        <h3>Resume</h3>
+        <div class="field"><label>Resume file path/URL</label><input id="in-resume" placeholder="./assets/resume/Sabin_Shrestha_Resume.pdf" /></div>
+      </section>
+    </div>
+
+    <section class="panel" style="margin-top:16px;">
+      <h3>Projects</h3>
+      <p class="note">Provide an array of objects: [{ "title":"...", "desc":"...", "stack":"...", "url":"https://..." }]</p>
+      <textarea id="in-projects" placeholder='[ {"title":"Secure File Sharing P2P","desc":"...","stack":"WPF • .NET","url":"https://github.com/..."} ]'></textarea>
+    </section>
+
+    <section class="panel" style="margin-top:16px;">
+      <h3>Contact Integration</h3>
+      <p class="note">Choose one method:
+      <br>- Formspree endpoint (ex: https://formspree.io/f/xyz)
+      <br>- Web3Forms access key (create at web3forms.com)</p>
+      <div class="row">
+        <div class="field"><label>Recipient Email</label><input id="in-recipient" placeholder="shresthasabe130@gmail.com"></div>
+        <div class="field"><label>Formspree Endpoint</label><input id="in-formspree" placeholder="https://formspree.io/f/xyz" /></div>
+      </div>
+      <div class="field"><label>Web3Forms Access Key</label><input id="in-web3forms" placeholder="YOUR_ACCESS_KEY" /></div>
+    </section>
+
+    <div style="display:flex; gap:10px; margin:16px 0;">
+      <button id="btn-save" class="btn primary">Save</button>
+      <button id="btn-reset" class="btn">Reset to Defaults</button>
+    </div>
+  </main>
+
+  <script src="./assets/js/admin.js"></script>
+</body>
+</html>
